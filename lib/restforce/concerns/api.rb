@@ -325,7 +325,7 @@ module Restforce
                              attrs_without_field
 
         if response.body.class == Array
-          raise Restforce::ServerError, "Conflicting resources (#{response.body})."
+          raise StandardError, "Conflicting resources (#{response.body})."
         else
           (response.body && response.body['id']) ? response.body['id'] : true
         end
